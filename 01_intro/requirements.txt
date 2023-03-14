@@ -1,0 +1,2 @@
+django 3.2.18
+request 4.18

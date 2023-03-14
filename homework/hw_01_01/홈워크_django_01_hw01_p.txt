@@ -1,0 +1,23 @@
+1. 가상환경 만들기
+python -m venv venv
+
+2. my_pjt 만들기
+django-admin startprojcet my_pjt
+
+3. my_app 만들기
+python manage.py startapp my_app
+
+4. 앱 등록
+settings.py에 my_app 추가
+
+5. my_app 내에 templates와 my_app 폴더 만들기
+
+6. hello.html만들기
+
+7. urls.py에 path 추가
+path('hello/', views.index)
+from my_app import views
+
+8. views.py에 index 함수 정의
+def index(request):
+    return render(rquest, 'my_app/hello.html')
