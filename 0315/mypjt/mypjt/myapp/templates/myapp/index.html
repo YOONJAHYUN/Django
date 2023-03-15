@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Hola! {{ info.name }}</h1>
+
+  {% if info.age == 26 %}
+    <p>부럽당</p>
+  {% endif %}
+  <h2>나이는 ! {{ info.age | add:-2 }}</h2>
+  
+{% endblock content %}
