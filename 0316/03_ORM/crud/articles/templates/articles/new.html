@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+<h1>게시글 생성 페이지</h1>
+<form action="{% url 'articles:create' %}">
+  {% comment "" %} 제목{% endcomment %}
+  <label for="title">제목</label>
+  <input type="text" id="title" name="title" />
+
+  {% comment "" %}내용 {% endcomment %}
+
+  <label for="content">내용 : </label>
+  <input type="text" id="content" name="content" />
+  {% comment "" %} 제출버튼 {% endcomment %}
+  <input type="submit" />
+</form>
+{% endblock content %}
