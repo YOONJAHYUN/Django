@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+<h1>DETAIL PAGE</h1>
+<p>제목 : {{article.title}}</p>
+<p>내용 : {{article.content}}</p>
+<p>작성 : {{article.created_at}}</p>
+<p>수정 : {{article.updated_at}}</p>
+
+<a href="{% url 'articles:edit' article.pk %}">[EDIT]</a>
+
+<form action="{% url 'articles:delete' article.pk %}" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="DELETE" />
+</form>
+{% endblock content %}
