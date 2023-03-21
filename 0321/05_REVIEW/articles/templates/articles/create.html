@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<h1>CREATE PAGE</h1>
+<!-- form태그의 기본 method == GET -->
+<form action="" method="POST">
+  {% csrf_token %}
+  <!-- 제목, 내용을 입력할 수 있는 입력란 -> 이게 article forms임 -->
+  {{ form.as_p }}
+  <input type="submit" />
+</form>
+{% endblock content %}
