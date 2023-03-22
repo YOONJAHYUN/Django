@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>DETAIL PAGE</h1>
+  <p>{{ article.title }}</p>
+  <p>{{ article.content }}</p>
+
+  <a 
+    href="{% url 'articles:update' article.pk %}"
+  >
+    [EDIT]
+  </a>
+  
+{% endblock content %}
