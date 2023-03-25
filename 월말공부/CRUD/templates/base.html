@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>{{user}}님 환영합니다!</p>
+
+    <form action="{% url 'accounts:delete' %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="회원탈퇴" />
+    </form>
+
+    <a href="{% url 'accounts:update' %}">회원정보 수정</a>
+    <a href="{% url 'accounts:login' %}">로그인</a>
+    <form action="{% url 'accounts:logout' %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="로그아웃" />
+    </form>
+    <a href="{% url 'accounts:signup' %}">회원가입</a>
+    <!-- static 태그 사용하고 파일 이름만 적으면 됩니다. -->
+    <img src="{% static 'header.jpg' %}" alt="노래듣는 고양이" />
+    {% block content %}{% endblock content %}
+  </body>
+</html>

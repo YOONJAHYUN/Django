@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<h1>CREATE PAGE</h1>
+
+<form
+  action="{% url 'articles:create' %}"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  <!-- token은 항상 post밑에 바로 넣기 -->
+  {% csrf_token %}
+  <!-- form 양식을 들고온다는 의미 -->
+  {{form.as_p}}
+
+  <input type="submit" value="제출" />
+</form>
+
+{% endblock content %}
