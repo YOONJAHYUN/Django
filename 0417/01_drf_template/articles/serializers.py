@@ -10,6 +10,7 @@ class CommentSerializer(serializers.ModelSerializer):
 class ArticleListSerializer(serializers.ModelSerializer):
     # comment_set = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
     comment_set = CommentSerializer(many=True, read_only=True)
+    
     class Meta:
         model = Article
         fields='__all__'
